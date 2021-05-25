@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@200&family=Signika:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#home {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../build/images/home_img.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(45, 82, 137, 0.55);
+  z-index: 100;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+nav ul {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+  display: block;
+}
+
+.lien, a {
+  line-height: 4.5rem;
+  color: #000000;
+  text-decoration: none;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.5s ease;
+}
+
+.lien::after {
+  content: "";
+  display: block;
+  margin-top: -1.2rem;
+  border-radius: 10px;
+  height: 3px;
+  width: 0;
+  background-color: #000000;
+  transition: width 0.5s ease;
+}
+
+.lien:hover::after {
+  width: 100%;
+}
+
+#rave {
+  width: 35%;
+}
+
+#rave a {
+  font-family: "Signika", sans-serif;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+ul img {
+  position: absolute;
+  width: 10%;
+  margin-top: -5vh;
+  animation-name: fusee;
+  margin-left: -20%;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fusee {
+  0% {
+    margin-left: -20%;
+  }
+  100% {
+    margin-left: 11%;
+  }
+}
+#fond_titre {
+  width: 40%;
+  height: 30%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: "Signika", sans-serif;
+  font-size: 5rem;
+  color: #ffffff;
+  text-shadow: #000000 5px 5px 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
+#bold {
+  font-weight: bolder;
+}
+
+#text {
+  margin-top: 3%;
+}
+
+#home svg {
+  position: absolute;
+  margin-top: 35%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#rectangleQuiBouge {
+  height: 50%;
+  position: absolute;
+  stroke: #F0C045;
+  stroke-width: 5px;
+  fill: none;
+  stroke-dasharray: 315;
+  animation-name: yes;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes yes {
+  0% {
+    stroke-dashoffset: 315;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -315;
+  }
+}
+h2 {
+  font-family: "Prompt", sans-serif;
+  font-weight: 900;
+  margin-top: 35%;
+  line-height: 6.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #F0C045;
+  font-size: 3.5rem;
+}
+
+#scroll {
+  position: absolute;
+  margin-top: 45%;
+  width: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/*# sourceMappingURL=style.css.map */
