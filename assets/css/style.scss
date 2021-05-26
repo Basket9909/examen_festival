@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&family=Signika:wght@300&display=swap');
 
 //gestion des couleurs
@@ -14,21 +14,49 @@ $gris_cadre : rgba(255, 255, 255, 0.4);
 $font_principale : 'Prompt', sans-serif;
 $font_secondaire : 'Signika', sans-serif;
 
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin centerGD {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+@mixin slideTaille {
+    width: 100%;
+    height: 100vh;
+}
+@mixin after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $gold;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
 html, body{
-    width: 100%;
-    height: 100vh;
+    @include slideTaille;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+//gestion su wrapper
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+//fin du wrapper
 //slide 1
 #home{
-    width: 100%;
-    height: 100vh;
+    position: relative;
+    @include slideTaille;
     background-image: url(../../build/images/home_img.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -122,13 +150,11 @@ ul img{
 //menu FIN
 
 #fond_titre{
+    @include center;
     width: 40%;
     height: 30%;
-    position: absolute;
     background-color: $gris_cadre;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    
 }
 h1{
     font-family: $font_secondaire;
@@ -146,10 +172,8 @@ h1{
 }
 
 #home svg{
-    position: absolute;
+    @include centerGD();
     margin-top: 35%;
-    left: 50%;
-    transform: translate(-50%,0);
 }
 
 #rectangleQuiBouge{
@@ -176,24 +200,120 @@ h1{
         stroke-dashoffset: -315;
     }  
 }
-h2{
+.date{
     font-family: $font_principale;
     font-weight: 900;
     margin-top: 35%;
     line-height: 6.5rem;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
+    @include centerGD;
     color: $gold;
     font-size: 3.5rem;
 }
 
 #scroll{
-    position: absolute;
+    @include centerGD;
     margin-top: 45%;
     width: 3%;
-    left: 50%;
-    transform: translate(-50%,0);
+}
+//slide1 FIN
+
+//slide2 
+
+#Edition_2021{
+    @include slideTaille;
+    height: 110vh;
+    position: relative;
+    background-color: $blue;
+}
+.fond_ST{
+    width: 100%;
+    height: auto;
+}
+.sous_titre{
+    color: $gold;
+    font-family: $font_principale;
+    font-size: 3rem;
+    @include centerGD();
+    position: relative;
+    font-weight: bolder;
+    text-align: center;
+    width: 30%;
+    line-height: 15vh;
+    background-color: $blue;
+}
+.fond_ST::after{
+    margin-top: -7vh;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $gold;
+}
+.container{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+}
+.carrez{
+    width: 150px;
+    height: 100px;
+    border: solid 5px $white_opa;
+    border-radius: 15px;
+}
+.carre{
+    text-align: center;
+    font-weight: normal;
+    color: $white;
+    font-family: $font_principale;
+    font-size: 1.5rem;
 }
 
+.chiffres{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.texte_slide2{
+    color: $white;
+    font-size: 1.5rem;
+    text-align:center;
+    font-size: $font_principale;
+    font-weight: 100;
+    margin-top: 10vh;
+}
+.warning{
+    margin-top: 2vh;
+    margin-right: 5vh;
+    color: $gold;
+}
+.covid{
+    display: inline-block;
+    font-size: 2.5rem;
+    color: $gold;
+}
+.covid::after{
+    @include after();
+}
+.pcr{
+    margin-top: 4vh;
+}
+.edition2020{
+    @include centerGD();
+    margin-top: 3vh;
+}
+.moreInfo{
+    font-size: 2.5rem;
+    @include centerGD();
+    margin-top: 38vh;
+    color: $white;
+}
+.aftermovie{
+    width: 280px;
+    height: 160px;
+    @include centerGD();
+    margin-top: 12vh;
+}
 
