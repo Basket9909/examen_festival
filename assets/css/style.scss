@@ -13,7 +13,7 @@ $gris_cadre : rgba(255, 255, 255, 0.4);
 //gestion des fonts
 $font_principale : 'Prompt', sans-serif;
 $font_secondaire : 'Signika', sans-serif;
-
+//initialisation des mixins
 @mixin center {
     position: absolute;
     top: 50%;
@@ -36,7 +36,7 @@ $font_secondaire : 'Signika', sans-serif;
     height: 3px;
     background-color: $gold;
 }
-
+//page a 0
 *{
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ html, body{
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-//gestion su wrapper
+//gestion du wrapper
 .wrapper{
     width: 1200px;
     margin: 0 auto;
@@ -57,12 +57,12 @@ html, body{
 #home{
     position: relative;
     @include slideTaille;
-    background-image: url(../../build/images/home_img.jpg);
+    background-image: url(../../build/images/home_img.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+//filtre bleu sur la photo
 #home::after{
     content: "";
     display: block;
@@ -102,7 +102,7 @@ nav ul li{
     font-size: 1.2rem;
     transition: 0.5s ease;
 }
-
+//souligner les titre des lien avec le hover
 .lien::after {
     content: '';
     display: block;
@@ -116,6 +116,7 @@ nav ul li{
   .lien:hover::after {
     width: 100%; 
   }
+//gestion du logo dans le menu
 #rave{
     width: 35%;
 }
@@ -148,7 +149,7 @@ ul img{
 }
 //gestion animation de la fusée FIN
 //menu FIN
-
+//titre principal
 #fond_titre{
     @include center;
     width: 40%;
@@ -164,13 +165,15 @@ h1{
     font-weight: normal;
     text-align: center;
 }
+//grosseur de la police du mot "festival"
 #bold{
     font-weight: bolder;
 }
+//centrage dans le rectangle
 #text{
     margin-top: 3%;
 }
-
+//gestion du rectangle qui tourne 
 #home svg{
     @include centerGD();
     margin-top: 35%;
@@ -209,7 +212,7 @@ h1{
     color: $gold;
     font-size: 3.5rem;
 }
-
+//gif scroll
 #scroll{
     @include centerGD;
     margin-top: 45%;
@@ -219,9 +222,10 @@ h1{
 
 //slide2 
 
-#Edition_2021{
+.taille_de_slide_bleu{
     @include slideTaille;
-    height: 110vh;
+    height: auto;
+    padding-bottom: 5vh;
     position: relative;
     background-color: $blue;
 }
@@ -280,7 +284,7 @@ h1{
     color: $white;
     font-size: 1.5rem;
     text-align:center;
-    font-size: $font_principale;
+    font-family: $font_principale;
     font-weight: 100;
     margin-top: 10vh;
 }
@@ -290,6 +294,7 @@ h1{
     color: $gold;
 }
 .covid{
+    font-family: $font_principale;
     display: inline-block;
     font-size: 2.5rem;
     color: $gold;
@@ -305,8 +310,11 @@ h1{
     margin-top: 3vh;
 }
 .moreInfo{
+    font-family: $font_principale;
     font-size: 2.5rem;
-    @include centerGD();
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
     margin-top: 38vh;
     color: $white;
 }
@@ -315,5 +323,60 @@ h1{
     height: 160px;
     @include centerGD();
     margin-top: 12vh;
+}
+
+//slide 2 FIN 
+
+//slide 3 DEBUT
+
+.container_artiste{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10vh;
+}
+
+.carte_artiste{
+    width: 230px;
+    height: 300px;
+    background-color: $blue;
+    border-radius: 20px;
+    overflow:hidden;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    
+}
+.carte_artiste:hover{
+    cursor: pointer;
+    .img_carte{
+        transform: scale(1.2); 
+    }
+    
+}
+.cont_img{
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 230px;
+    overflow:hidden;
+}
+.img_carte{
+    height: 100%;
+    width: 100%;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.rect_texte{
+    background-color: $white;
+    width: 100%;
+    height: 70px;
+}
+.texte_carte{
+    color: $black;
+    width: 100%;
+    text-align: center;
+    font-family: $font_principale;
+    font-size: 1.2rem;
+    line-height: 4rem;
 }
 
