@@ -319,8 +319,15 @@ h1 {
   width: 100%;
   height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 10vh;
+}
+
+#touch {
+  position: absolute;
+  margin-top: -220px;
+  margin-left: 10px;
 }
 
 .carte_artiste {
@@ -329,8 +336,9 @@ h1 {
   background-color: #2D5289;
   border-radius: 20px;
   overflow: hidden;
-  margin-bottom: 10vh;
-  margin-top: 10vh;
+  margin-bottom: 50px;
+  margin-top: 70px;
+  backface-visibility: hidden;
 }
 
 .carte_artiste:hover {
@@ -367,6 +375,124 @@ h1 {
   font-family: "Prompt", sans-serif;
   font-size: 1.2rem;
   line-height: 4rem;
+}
+
+.carte_retour {
+  position: absolute;
+  width: 230px;
+  height: 300px;
+  background-color: #ffffff;
+  margin-top: -350px;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.wrapper_carte {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.centrage {
+  width: 100%;
+  text-align: center;
+}
+
+.titre_carte_retour, .sous_titre_carte_retour {
+  display: inline-block;
+  color: #2D5289;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  width: auto;
+}
+
+.sous_titre_carte_retour {
+  font-size: 1rem;
+}
+
+.texte_carte_retour {
+  display: block;
+  width: 100%;
+  color: #000000;
+  font-family: "Prompt", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.flip {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip.flipMe {
+  transform: rotateY(180deg);
+}
+
+.titre_carte_retour::after, .sous_titre_carte_retour::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #F0C045;
+  background-color: #2D5289;
+  height: 2px;
+}
+
+.icons {
+  text-align: center;
+  width: 100%;
+  text-align: center;
+}
+
+.fa-youtube, .fa-spotify, .fa-itunes-note {
+  margin: 0 10px;
+}
+
+.timeline_line {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.line {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.timeline_hour, .timeline_name {
+  width: 100%;
+  grid-column: 3/span 3;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Prompt", sans-serif;
+  text-align: center;
+  font-weight: 100;
+}
+
+.timeline_name {
+  grid-column: 6/span 3;
+  font-weight: 500;
+}
+
+.timeline_pict {
+  grid-column: 9;
+  margin-top: -5px;
+}
+
+.timeline_hour::after {
+  content: "";
+  width: 3px;
+  height: 50px;
+  border-radius: 20px;
+  display: block;
+  background-color: #ffffff;
+  margin-left: 100%;
+  margin-top: -55px;
 }
 
 /*# sourceMappingURL=style.css.map */

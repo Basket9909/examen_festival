@@ -73,7 +73,8 @@
         <script type="text/javascript" src="decompte.js"></script>
         <!--Fin du décompte-->
             <h3 class="texte_slide2">L’edition 2021 se tiendra bien au sportpaleis d’Anvers le 09 septembre avec un maximum de 10.000 festivaliers</h3>
-            <i class="fas fa-exclamation-triangle fa-3x warning"></i><h3 class="covid">Protocol covid :</h3>
+            <i class="fas fa-exclamation-triangle fa-3x warning"></i>
+            <h3 class="covid">Protocol covid :</h3>
             <h3 class="texte_slide2 pcr">L’entrée au sportpaleis pourra se faire uniquement avec un test PCR négatif ou une preuve de vaccination.</h3>
             <h3 class="covid edition2020">Revivez l'edition 2020</h3>
             <!--Vidéo-->
@@ -91,55 +92,326 @@
     <!--Premier titre "Line-up"-->
             <div class="fond_ST"><h2 class="sous_titre">Line-up</h2></div>
     <!--Gestion des cartes pour les artistes-->
+    <!--Je met un container qui contiens tous les artistes-->
             <div class="container_artiste">
+    <!--Je met une div qui va acceuillir la class "flipMe qui va premetre la rotation au click"-->
+                <div class="flip">
+    <!--Je separes les deux face de la carte: ici la carte de base-->
                 <div class="carte_artiste">
-                    <div class="cont_img"><img src="build/images/sub_zero_project.webp" alt="Sub_zero_project"class="img_carte"></div>
+                    <!--Image du groupe-->
+                    <div class="cont_img"><img src="build/images/sub_zero_project.webp" alt="Sub_zero_project"class="img_carte">
+                    <!--images du click-->
+                    <img src="build/images/touch.svg" alt="touch" id="touch"></div>
+                    <!--nom du groupe-->
                     <div class="rect_texte"><h4 class="texte_carte">Sub zero project</h4></div>
+                    
                 </div>
+    <!--Deuxieme partie de la carte avec touts les details-->
+                <div class="carte_retour">
+                    <!--wrapper pour mettre des marges a la carte-->
+                    <div class="wrapper_carte">
+                    <!--Div pour permtre de centrer les titres-->
+                    <div class="centrage">
+                    <!--titre-->
+                    <h5 class="titre_carte_retour">Sub Zero Project</h5></div>
+                    <!--premier texte explicatif-->
+                    <h7 class="texte_carte_retour">Sub Zero Project est un duo de DJ et compositeurs de musique électronique Néerlandais, spécialisés en rawstyle.</h7>
+                    <div class="centrage">
+                    <!--sous titre-->
+                    <h6 class="sous_titre_carte_retour">Leurs titres notables</h6></div>
+                    <!--chanson de l'artiste-->
+                    <h7 class="texte_carte_retour">Sub zero project - The project <br>
+                    Sub zero project - Rave into space <br>
+                    Sub zero project - The contagion</h7>
+                    <div class="centrage">
+                    <!--Sous titre-->
+                    <h6 class="sous_titre_carte_retour">Ecouter Sub zero project</h6></div>
+                    <!--Les icons avec des "a" pour renvoyer vers les bonnes pages. le tout en target blank pour ouvir dans un nouvel onglet-->
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UC8WgWIxhmwziOgvWm_yGVeg" target="_blank"><i class="fab fa-youtube  fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/4f0OXMMSxr0r8Ztx6CdpAl?si=olioyGAyRby_rYvC6lHegA" target="_blank"><i class="fab fa-spotify  fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/sub-zero-project/820597984" target="_blank"><i class="fab fa-itunes-note fa-2x" ></i></a>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <!--repeter pour tout les artiste-->
+            <div class="flip">
                 <div class="carte_artiste">
                    <div class="cont_img"> <img src="build/images/rebelion.webp" alt="Sub_zero_project"class="img_carte"></div>
                    <div class="rect_texte"> <h4 class="texte_carte">Rebelion</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Rebelion</h5></div>
+                   <h7 class="texte_carte_retour">Rebelion est un duo de DJ et compositeurs de musique électronique Anglais, spécialisés en rawstyle. </h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Leurs titres notables</h6></div>
+                    <h7 class="texte_carte_retour">Rebelion - Never back down<br>
+                    Rebelion - End game<br>
+                    Rebelion - Rise from the street</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Rebelion</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCN1B4FBOO9XM9IkyAuFf0Ng" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/5JcSyYpBdqCmjJyVlKh7Yg?si=qDUqB9eeSIa_B3Gj154BRg" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/rebelion/1338925632" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                    
+                </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/mandy.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"> <h4 class="texte_carte">Mandy</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Mandy</h5></div>
+                   <h7 class="texte_carte_retour">Mandy est une dj et productice belge de hardstyle. elle est sur la scéne depuis 2017 spécialisée dans l'euphorique.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Mandy - Gimme your love<br>
+                    Mandy - Raggadrop<br>
+                    Mandy - High tonight</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Mandy</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCsFcbYXC0IGlDbV5FyQMjGw" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/59VlEky6rgwrcluurlvspE?si=g2ZOz1FmTeGA4CrIZTiS2Q" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/mandy/990577323" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/mark_with_a_k.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Mark with A K</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Mark with A K</h5></div>
+                   <h7 class="texte_carte_retour">Mark With A K est un dj producteur néerlandais. Actif depuis 2003, il est précurseur dans la techstyle.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    MWAK - Sommebody like me<br>
+                    MWAK - Warrior<br>
+                   MWAk - Oasis</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Mark with A K</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCv6DbC1hefLDqdcROyOj6Tg" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/4OPaH4YIqua9DUnI7t0fOQ?si=fTnXss57S-iczWcuwNuwng" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/mark-with-a-k/185861327" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/headhunterz.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Headhunterz</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Headhunterz</h5></div>
+                   <h7 class="texte_carte_retour">Headhunterz est un dj et producteur néerlandais. Il est aussi le dj de hard-musique le plus populaire. </h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Headhunterz - Destiny<br>
+                    Headhunterz - Dragonborn<br>
+                    Headhunterz - Rock civilization</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Headhunterz</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCivgedmwoy8PH8bpaWeXT_Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/6C0KWmCdqrLU2LzzWBPbOy?si=Nq5AknOuTFO5i7504FwnLQ" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/headhunterz/411671021" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/miss_k8.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Miss K8</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Miss K8</h5></div>
+                   <h7 class="texte_carte_retour">Miss K8 est une dj et productrice  ukrainienne. Elle commence en 2011 dans le style Hardcore.
+                   </h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Miss K8 - Out of the frame<br>
+                    Miss K8 - Raiders of rampage<br>
+                    Miss K8 - Elevate</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Miss K8</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UC9QwEZj-KBlYzW3hbsgwS-Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/776uRsooWrGiVZkVWtvfgO?si=JuCOYCfUQsiybrxNTLv5cg" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/miss-k8/510631277" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/angerfist.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Angerfist</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Angerfist</h5></div>
+                   <h7 class="texte_carte_retour">Angerfist est un producteur et dj de hardcore néerlandais. Actif depuis 2001, il est un des dj les plus connu en Hardcore.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Angerfist - Incoming<br>
+                    Angerfist - Creed of chaos<br>
+                    Angerfist - Knock Knock</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Angerfist</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCdluEI4RUCXmIgWyGmt5y9g" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/4sQNUQjOYj9rV2sdfJ8laS?si=TP6u-sQCS5OgrAF3FSrAgQ" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/angerfist/277209930" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/harddriver.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Hard driver</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">hard driver</h5></div>
+                   <h7 class="texte_carte_retour">Hard driver est un DJ et producteur néerladais spécialisé dans le raw style.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Hard driver - No rest for the wicked<br>
+                    Hard driver - Chemistry<br>
+                    Hard driver - All or nothing</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter Hard driver</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/user/HarddriverMusic" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/1rpLzYzfrueWdkpcIunZQl?si=JKlyIKPNQ_OUsKyNX0VPHw" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/hard-driver/152313336" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 <div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/ghost.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Ghost stories</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Ghost stories</h5></div>
+                   <h7 class="texte_carte_retour">Ghost stories, est un groupe formé avec le duo D-block & S-te-fan et la soeur de D-block, Evelyn Bakker.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Leurs titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Ghost stories - Sweet dreams<br>
+                    Ghost stories - Inside my head<br>
+                    Ghost stories - Open your mind</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter  Ghost stories</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCmfOGQ3VvARBbG5snOsdklQ" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/6J6UF3GqOLdt6f4gfazSzf?si=fto8rYHnR3CTFvcM_BrzTA" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/ghost-stories/1469715184" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <div class="flip">
                 </a><div class="carte_artiste">
                     <div class="cont_img"><img src="build/images/sefa.webp" alt="Sub_zero_project"class="img_carte"></div>
                     <div class="rect_texte"><h4 class="texte_carte">Sefa</h4></div>
                 </div>
+                <div class="carte_retour">
+                    <div class="wrapper_carte">
+                    <div class="centrage"><h5 class="titre_carte_retour">Sefa</h5></div>
+                   <h7 class="texte_carte_retour">Sefa est un jeune dj producteur de frenshcore néerlandais. Il est connu notament grâce a ses collaborations avec “DR. Peacock”.</h7>
+                    <div class="centrage"> <h6 class="sous_titre_carte_retour">Ses titres notables</h6></div>
+                    <h7 class="texte_carte_retour">
+                    Sefa - In the hemel<br>
+                    Sefa - Nothing like the old school<br>
+                    Sefa - God’s plan</h7>
+                    <div class="centrage"><h6 class="sous_titre_carte_retour">Ecouter  Sefa</h6></div>
+                    <div class="icons">
+                    <a href="https://www.youtube.com/channel/UCZpHk06_nhe7C6n0tD1mt_w" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>  
+                    <a href="https://open.spotify.com/artist/0caJEGgVuXuSHhhrMCmlkI?si=SPOl7erkRE6dQKdWD4ScYw" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                    <a href="https://music.apple.com/us/artist/sefa/1197617144" target="_blank"><i class="fab fa-itunes-note fa-2x"></i></a>
+                </div>
+                </div>
+                </div>
+                </div>
+    <!--script au click-->
+<script type="text/javascript" src="click_carte_artiste.js"></script>
+
             </div>
             </div>
     </div>
+    <!--Slide 3 FIN-->
+    <!--Slide 4 DEBUT-->
     <div class="taille_de_slide_bleu" id="timetable">
     <!--Début du wrapper-->
         <div class="wrapper">
     <!--Premier titre "Line-up"-->
             <div class="fond_ST"><h2 class="sous_titre">Timetable</h2></div>
+            <div class="timeline_line">
+                <div class="line">
+        <h4 class="timeline_hour">21H - 22H</h4>
+        <h4 class="timeline_name">Mandy</h4>
+        <img src="build/images/mandy.svg" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">22H - 23H</h4>
+        <h4 class="timeline_name">Ghost stories</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">23H - 00H</h4>
+        <h4 class="timeline_name">Headhunterz</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">00H - 01H</h4>
+        <h4 class="timeline_name">Hard driver</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">01H - 02H</h4>
+        <h4 class="timeline_name">Sub zero project</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">02H - 03H</h4>
+        <h4 class="timeline_name">Mark with A K</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">03H - 04H</h4>
+        <h4 class="timeline_name">Rebelion</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">04H - 05H</h4>
+        <h4 class="timeline_name">Miss K8</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">05H - 06H</h4>
+        <h4 class="timeline_name">Angerfist</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+                <div class="line">
+        <h4 class="timeline_hour">06H - 07H</h4>
+        <h4 class="timeline_name">Sefa</h4>
+        <img src="build/images/mandy.svg" id="ghosty" alt="mandy" class="timeline_pict">
+                </div>
+        </div>
+
     </div>
     </div>
 </body>
