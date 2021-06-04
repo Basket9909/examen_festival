@@ -302,17 +302,17 @@ h1 {
   font-weight: normal;
   width: 100%;
   text-align: center;
-  margin-top: 38vh;
+  margin-top: 60vh;
   color: #ffffff;
 }
 
 .aftermovie {
-  width: 280px;
-  height: 160px;
+  width: 560px;
+  height: 320px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  margin-top: 12vh;
+  margin-top: 16vh;
 }
 
 .container_artiste {
@@ -328,11 +328,14 @@ h1 {
 
 #touch {
   position: absolute;
-  margin-top: -220px;
-  margin-left: 10px;
+  margin-top: -5em;
+  z-index: 100;
+  top: 100px;
+  left: 0;
 }
 
 .carte_artiste {
+  position: relative;
   width: 230px;
   height: 300px;
   background-color: #2D5289;
@@ -421,6 +424,7 @@ h1 {
   font-size: 0.8rem;
   text-align: center;
   margin: 5px 0;
+  line-height: 1.7em;
 }
 
 .flip {
@@ -446,10 +450,12 @@ h1 {
   text-align: center;
   width: 100%;
   text-align: center;
+  margin-top: -1rem;
 }
 
 .fa-youtube, .fa-spotify, .fa-itunes-note {
   margin: 0 10px;
+  font-size: 1.2em;
 }
 
 .timeline_line {
@@ -504,43 +510,197 @@ h1 {
 }
 
 #headhunterz_rond {
-  background-image: url(../../build//images/headhunterz.webp);
+  background-image: url(../../build//images/petite_images/headhunterz.png);
 }
 
 #Angerfist_rond {
-  background-image: url(../../build//images/angerfist.webp);
+  background-image: url(../../build//images/petite_images/angerfist.png);
 }
 
 #Ghost_rond {
-  background-image: url(../../build//images/ghost.webp);
+  background-image: url(../../build//images/petite_images/ghost.png);
 }
 
 #hard_rond {
-  background-image: url(../../build//images/harddriver.webp);
+  background-image: url(../../build//images/petite_images/hard.png);
 }
 
 #mandy_rond {
-  background-image: url(../../build//images/mandy.webp);
+  background-image: url(../../build//images/petite_images/mandy2.png);
 }
 
 #mwak_rond {
-  background-image: url(../../build//images/mark_with_a_k.webp);
+  background-image: url(../../build//images/petite_images/mark.png);
 }
 
 #sub_rond {
-  background-image: url(../../build//images/sub_zero_project.webp);
+  background-image: url(../../build//images/petite_images/sub.png);
 }
 
 #rebelion_rond {
-  background-image: url(../../build//images/rebelion.webp);
+  background-image: url(../../build//images/petite_images/rebelion.png);
 }
 
 #miss_rond {
-  background-image: url(../../build//images/miss_k8.webp);
+  background-image: url(../../build//images/petite_images/miss.png);
 }
 
 #sefa_rond {
-  background-image: url(../../build//images/sefa.webp);
+  background-image: url(../../build//images/petite_images/sefa.png);
+}
+
+.fuseeLiftOff {
+  position: absolute;
+  margin-top: 50vh;
+}
+
+#fuseeLiftOff_gauche {
+  margin-left: -36px;
+}
+
+#fuseeLiftOff_droit {
+  margin-left: 1163px;
+}
+
+.ticket_grid {
+  width: 100%;
+  height: auto;
+  margin-top: 10vh;
+}
+
+.ligne_ticket_grid {
+  width: 100%;
+  height: 100px;
+  display: grid;
+  margin-top: 5vh;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.ticket_text_bold, .ticket_text {
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  grid-column: 1/span 1;
+}
+
+.ticket_text_bold::after {
+  content: "";
+  width: 150px;
+  height: 3px;
+  border-radius: 20px;
+  display: block;
+  background-color: #ffffff;
+  margin-top: -20px;
+  margin-left: 320px;
+}
+
+.ticket_text {
+  grid-column: 3/span 10;
+  font-weight: 100;
+}
+
+.Text_choisir_ticket {
+  font-family: "Prompt", sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  text-align: left;
+  margin-top: 5vh;
+  grid-column: 1/span 7;
+}
+
+#choisir_Ticket, #choisir_nombre_Ticket {
+  grid-column: 9;
+  height: 25px;
+  margin-top: 7.5vh;
+}
+
+#payer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150px;
+  height: 50px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10vh;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: "Signika", sans-serif;
+  font-weight: bold;
+}
+
+#payer:hover {
+  background-color: #F0C045;
+}
+
+.ask {
+  width: 100%;
+  margin-top: 5vh;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: "Signika", sans-serif;
+  font-weight: 100;
+}
+
+.wrapper_special {
+  width: 50%;
+  height: auto;
+  margin: 2vh auto;
+}
+
+#mess {
+  height: 25vh;
+  resize: none;
+}
+
+#envoyer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150px;
+  height: 50px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10vh;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: "Signika", sans-serif;
+  font-weight: bold;
+}
+
+#envoyer:hover {
+  background-color: #F0C045;
+}
+
+.container_sponsors {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10vh;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  transition: all 0.3s;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=style.css.map */
