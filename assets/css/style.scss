@@ -23,7 +23,12 @@ $font_secondaire : 'Signika', sans-serif;
 @mixin centerGD {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translateX(-50%);
+}
+@mixin centerHB {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 @mixin slideTaille {
     width: 100%;
@@ -104,8 +109,6 @@ nav ul li{
     list-style: none;
     display: block;
 }
-
-
 .lien,a {
     line-height: 4.5rem;
     color: $black;
@@ -114,6 +117,7 @@ nav ul li{
     font-weight:bold;
     font-size: 1.2rem;
     transition: 0.5s ease;
+    
 }
 //souligner les titre des lien avec le hover
 .lien::after {
@@ -137,13 +141,13 @@ nav ul li{
     font-family: $font_secondaire;
     font-weight: bolder;
     font-size: 2.5rem;
+    @include centerHB();
 
 }
 //gestion animation de la fusée
 ul img{
-    position: absolute;
     width: 10%;
-    margin-top: -5vh;
+    @include centerHB();
     animation-name: fusee;
     margin-left: -20%;
     animation-duration: 2s;
@@ -238,7 +242,7 @@ h1{
 .taille_de_slide_bleu{
     @include slideTaille;
     height: auto;
-    padding-bottom: 5vh;
+    padding-bottom: 3vh;
     position: relative;
     background-color: $blue;
 }
@@ -299,37 +303,70 @@ h1{
     text-align:center;
     font-family: $font_principale;
     font-weight: 100;
+    margin-top: 3vh;
+}
+.marge{
     margin-top: 10vh;
 }
-.warning{
-    margin-top: 2vh;
-    margin-right: 5vh;
+.info{
+    font-weight: 900;
+    font-size: 1.7rem;
+    text-align: start;
+}
+.slide2_enSavoirPlus{
+    @include centerGD();
+    @include buton();
+    text-align: center;
+    margin-top: 30px;
+    background-color: transparent;
+    border: solid 2px $white;
+    color: $white;
+    line-height: 200%;
+    transition: all 0.5s ease-in-out;
+}
+.slide2_enSavoirPlus:hover{
+    border: solid 2px $gold;
     color: $gold;
 }
-.covid{
+#question{
+    text-align: center;
+}
+#bouton_contact{
+    width: 200px;
+}
+.test_1{
+    color: $white;
+    font-family: $font_secondaire;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    margin-top: -5%;
+}
+.test_1:hover{
+    color: $gold;
+}
+.revivre{
     font-family: $font_principale;
     display: inline-block;
     font-size: 2.5rem;
     color: $gold;
 }
-.covid::after{
+.revivre::after{
     @include after();
-}
-.pcr{
-    margin-top: 4vh;
 }
 .edition2020{
     @include centerGD();
+    position: relative;
     margin-top: 3vh;
 }
 .moreInfo{
     font-family: $font_principale;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: normal;
     width: 100%;
     text-align: center;
-    margin-top: 60vh;
     color: $white;
+    margin-top: 400px;
 }
 .aftermovie{
     width: 560px;
@@ -616,7 +653,7 @@ h1{
     grid-column: 1/span 7;
 }
 #choisir_Ticket,#choisir_nombre_Ticket{
-    grid-column: 9;
+    grid-column: 9/span 2;
     height: 25px;
     margin-top: 7.5vh;
 }
@@ -666,11 +703,97 @@ h1{
 .logo{
     width: 150px;
     height: 150px;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
     filter: grayscale(1);
     cursor: pointer;
 }
 .logo:hover{
     filter: grayscale(0);
-    transform: scale(1.1);
+    transform: scale(1.075);
+}
+// slide 8 DEBUT
+#end_line{
+    padding-top: 10vh;
+}
+.container_footer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#resaux{
+    font-family: $font_principale;
+    font-size: 2rem;
+    font-weight: 500;
+    color: $white;
+    text-align: center;
+}
+#resaux::after{
+    @include after();
+    background-color: $white;
+}
+.container_resaux{
+    width: auto;
+    height: auto;
+}
+.container_resaux i{
+    font-size: 2rem;
+    color: $white;
+    margin : 3vh 1vh 0vh 1vh;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.container_resaux i:hover{
+    color: $gold;
+}
+.container_logo_footer{
+    width: auto;
+    height: auto;
+    position: relative;
+}
+.container_miniMenu{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container_miniMenu a{
+    color: $white;
+}
+.container_miniMenu span{
+    font-family: $font_principale;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    color: $white;
+    margin: 0 10px;
+}
+.taille_font{
+    font-weight: lighter;
+}
+.container_miniMenu a:hover{
+    color: $gold;
+}
+
+#texte_logo_footer{
+    font-family: $font_secondaire;
+    font-size: 2rem;
+    font-weight: 900;
+    color: $white;
+    @include centerHB();
+}
+#footer_fusee{ 
+    margin-left: 150px; 
+    @include centerHB();
+    position: relative;
+
+}
+#copy{
+    font-size: 1.2rem;
+    font-family: $font_principale ;
+    margin-top: 5vh;
+    width: 100%;
+    color: $white;
+    text-align: center;
 }

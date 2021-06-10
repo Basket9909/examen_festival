@@ -89,12 +89,16 @@ nav ul li {
   font-family: "Signika", sans-serif;
   font-weight: bolder;
   font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 ul img {
-  position: absolute;
   width: 10%;
-  margin-top: -5vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   animation-name: fusee;
   margin-left: -20%;
   animation-duration: 2s;
@@ -140,7 +144,7 @@ h1 {
 #home svg {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   margin-top: 35%;
 }
 
@@ -175,7 +179,7 @@ h1 {
   line-height: 6.5rem;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   color: #F0C045;
   font-size: 3.5rem;
 }
@@ -183,7 +187,7 @@ h1 {
 #scroll {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   margin-top: 45%;
   width: 3%;
 }
@@ -192,7 +196,7 @@ h1 {
   width: 100%;
   height: 100vh;
   height: auto;
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
   position: relative;
   background-color: #2D5289;
 }
@@ -208,7 +212,7 @@ h1 {
   font-size: 3rem;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   position: relative;
   font-weight: bolder;
   text-align: center;
@@ -261,23 +265,77 @@ h1 {
   text-align: center;
   font-family: "Prompt", sans-serif;
   font-weight: 100;
+  margin-top: 3vh;
+}
+
+.marge {
   margin-top: 10vh;
 }
 
-.warning {
-  margin-top: 2vh;
-  margin-right: 5vh;
+.info {
+  font-weight: 900;
+  font-size: 1.7rem;
+  text-align: start;
+}
+
+.slide2_enSavoirPlus {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 50px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10vh;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: "Signika", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  background-color: transparent;
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  line-height: 200%;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide2_enSavoirPlus:hover {
+  border: solid 2px #F0C045;
   color: #F0C045;
 }
 
-.covid {
+#question {
+  text-align: center;
+}
+
+#bouton_contact {
+  width: 200px;
+}
+
+.test_1 {
+  color: #ffffff;
+  font-family: "Signika", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: block;
+  margin-top: -5%;
+}
+
+.test_1:hover {
+  color: #F0C045;
+}
+
+.revivre {
   font-family: "Prompt", sans-serif;
   display: inline-block;
   font-size: 2.5rem;
   color: #F0C045;
 }
 
-.covid::after {
+.revivre::after {
   content: "";
   display: block;
   width: 100%;
@@ -285,25 +343,22 @@ h1 {
   background-color: #F0C045;
 }
 
-.pcr {
-  margin-top: 4vh;
-}
-
 .edition2020 {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
+  position: relative;
   margin-top: 3vh;
 }
 
 .moreInfo {
   font-family: "Prompt", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: normal;
   width: 100%;
   text-align: center;
-  margin-top: 60vh;
   color: #ffffff;
+  margin-top: 400px;
 }
 
 .aftermovie {
@@ -311,7 +366,7 @@ h1 {
   height: 320px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   margin-top: 16vh;
 }
 
@@ -612,7 +667,7 @@ h1 {
 }
 
 #choisir_Ticket, #choisir_nombre_Ticket {
-  grid-column: 9;
+  grid-column: 9/span 2;
   height: 25px;
   margin-top: 7.5vh;
 }
@@ -620,7 +675,7 @@ h1 {
 #payer {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   width: 150px;
   height: 50px;
   background-color: #ffffff;
@@ -664,7 +719,7 @@ h1 {
 #envoyer {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   width: 150px;
   height: 50px;
   background-color: #ffffff;
@@ -693,14 +748,121 @@ h1 {
 .logo {
   width: 150px;
   height: 150px;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   filter: grayscale(1);
   cursor: pointer;
 }
 
 .logo:hover {
   filter: grayscale(0);
-  transform: scale(1.1);
+  transform: scale(1.075);
+}
+
+#end_line {
+  padding-top: 10vh;
+}
+
+.container_footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#resaux {
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+}
+
+#resaux::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #F0C045;
+  background-color: #ffffff;
+}
+
+.container_resaux {
+  width: auto;
+  height: auto;
+}
+
+.container_resaux i {
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 3vh 1vh 0vh 1vh;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.container_resaux i:hover {
+  color: #F0C045;
+}
+
+.container_logo_footer {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.container_miniMenu {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container_miniMenu a {
+  color: #ffffff;
+}
+
+.container_miniMenu span {
+  font-family: "Prompt", sans-serif;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.taille_font {
+  font-weight: lighter;
+}
+
+.container_miniMenu a:hover {
+  color: #F0C045;
+}
+
+#texte_logo_footer {
+  font-family: "Signika", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#footer_fusee {
+  margin-left: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+#copy {
+  font-size: 1.2rem;
+  font-family: "Prompt", sans-serif;
+  margin-top: 5vh;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

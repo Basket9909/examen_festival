@@ -86,18 +86,11 @@ const decompte = ()=>{
         second.innerHTML = 0
         time.remove()
     }
-    if(difJour < 10){
-        day.innerHTML = "0"+difJour
-    }
-    if(difHeure < 10){
-        hour.innerHTML = "0"+difHeure
-    }
-    if(difMinute < 10){
-        minut.innerHTML = "0"+difMinute
-    }
-    if(difSeconde < 10){
-        second.innerHTML = "0"+difSeconde
-    }
+   
+        day.innerHTML = ("0"+difJour).slice(-2)
+        hour.innerHTML = ("0"+difHeure).slice(-2)
+        minut.innerHTML = ("0"+difMinute).slice(-2)
+        second.innerHTML = ("0"+difSeconde).slice(-2)
 
 
 
