@@ -30,12 +30,44 @@ html, body {
 }
 
 #home::after {
+  position: absolute;
   content: "";
   display: block;
   width: 100%;
   height: 100vh;
   background-color: rgba(45, 82, 137, 0.55);
   z-index: 100;
+}
+
+#arrow {
+  position: fixed;
+  color: #ffffff;
+  opacity: 0.5;
+  width: 50px;
+  left: 90%;
+  top: 90%;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 1s;
+}
+
+#image_ticket {
+  opacity: 0.5;
+  position: fixed;
+  width: 50px;
+  left: 90%;
+  top: 10%;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 1s;
+}
+
+#image_ticket:hover {
+  opacity: 1;
+}
+
+#arrow:hover {
+  opacity: 1;
 }
 
 nav {
@@ -113,12 +145,14 @@ ul img {
   display: none;
   width: 50px;
   height: 35px;
-  margin-right: 40px;
+  margin-left: 90%;
+  margin-top: -45vh;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  z-index: 1000000;
 }
 
 #burger .bar {
@@ -127,6 +161,7 @@ ul img {
   border-radius: 20px;
   background-color: #000000;
   margin: 5px 0;
+  transition: all 1s ease-in-out;
 }
 
 @keyframes fusee {
@@ -172,6 +207,7 @@ h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  position: relative;
   grid-row: 2;
   z-index: 1000;
 }
@@ -222,6 +258,64 @@ h1 {
   z-index: 1000;
 }
 
+.menuBurger {
+  background-color: #2D5289;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  transition: transform 1s ease-in-out;
+  transform: translate(100%, 0);
+}
+
+.open {
+  transition: transform 1s ease-in-out;
+  transform: translate(0%, 0%);
+  position: fixed;
+}
+
+#burger .haut {
+  transition: all 1s ease-in-out;
+  transform: rotate(-45deg) translate(-13px);
+  transform-origin: center;
+  background-color: #F0C045;
+}
+
+#burger .bas {
+  transition: all 1s ease-in-out;
+  transform: rotate(45deg) translate(-13px);
+  transform-origin: center;
+  background-color: #F0C045;
+}
+
+#burger .milieu {
+  transition: all 1s ease-in-out;
+  transform: scale(0);
+  display: hidden;
+}
+
+.containerMenuBurger {
+  height: auto;
+  width: auto;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.lienMenuBurger {
+  width: 100%;
+  text-align: center;
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #F0C045;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
 @media all and (max-width: 1500px) {
   ul img {
     left: 7%;
@@ -266,7 +360,7 @@ h1 {
 }
 @media all and (max-width: 1000px) {
   ul img {
-    left: 14%;
+    display: none;
   }
 
   nav ul li {
@@ -283,15 +377,22 @@ h1 {
   }
 
   #rave {
-    margin-left: 40px;
+    margin-left: 20px;
+  }
+
+  #burger {
+    margin-right: 10px;
+  }
+
+  #arrow {
+    display: none;
+  }
+
+  #image_ticket {
+    display: none;
   }
 }
 @media all and (max-width: 900px) {
-  ul img {
-    left: 16%;
-    width: 12%;
-  }
-
   h1 {
     font-size: 4rem;
   }
@@ -309,18 +410,7 @@ h1 {
     width: 5%;
   }
 }
-@media all and (max-width: 800px) {
-  ul img {
-    left: 20%;
-    width: 14%;
-  }
-}
 @media all and (max-width: 700px) {
-  ul img {
-    left: 24%;
-    width: 14%;
-  }
-
   h1 {
     font-size: 3rem;
   }
@@ -346,12 +436,12 @@ h1 {
   #scroll {
     width: 7%;
   }
+
+  #burger {
+    margin-left: 80%;
+  }
 }
 @media all and (max-width: 650px) {
-  ul img {
-    display: none;
-  }
-
   .wrapper {
     width: 90%;
   }
@@ -489,6 +579,10 @@ h1 {
   color: #F0C045;
 }
 
+#lireMoins {
+  display: none;
+}
+
 #question {
   text-align: center;
 }
@@ -504,6 +598,7 @@ h1 {
   font-weight: bold;
   font-size: 1.5rem;
   display: block;
+  transition: all 0.5s ease-in-out;
 }
 
 .nousContacter:hover {
@@ -574,6 +669,15 @@ h1 {
 
   .moreInfo {
     margin-top: 300px;
+  }
+
+  .nousContacter:hover {
+    color: #ffffff;
+  }
+
+  .slide2_enSavoirPlus:hover {
+    border: solid 2px #ffffff;
+    color: #ffffff;
   }
 }
 @media all and (max-width: 900px) {
@@ -716,6 +820,11 @@ h1 {
     margin-top: 200px;
   }
 }
+@media all and (min-height: 850px) {
+  .moreInfo {
+    margin-top: 350px;
+  }
+}
 .container_artiste {
   position: relative;
   margin: 0 auto;
@@ -789,6 +898,7 @@ h1 {
   height: 300px;
   background-color: #ffffff;
   margin-top: -350px;
+  margin-left: 5px;
   border-radius: 20px;
   backface-visibility: hidden;
   transform: rotateY(180deg);
@@ -814,7 +924,7 @@ h1 {
 }
 
 .sous_titre_carte_retour {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .texte_carte_retour {
@@ -851,23 +961,46 @@ h1 {
   text-align: center;
   width: 100%;
   text-align: center;
-  margin-top: -1rem;
+  margin-top: 0.5rem;
 }
 
 .fa-youtube, .fa-spotify, .fa-itunes-note {
   margin: 0 10px;
   font-size: 1.2em;
+  color: #000000;
 }
 
-@media all and (max-width: 533px) {
+@media all and (max-width: 1250px) {
+  .carte_artiste {
+    margin: 70px 20px 50px 20px;
+  }
+
+  .carte_retour {
+    margin-left: 20px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .carte_artiste:hover {
+    cursor: pointer;
+  }
+  .carte_artiste:hover .img_carte {
+    transform: none;
+  }
+}
+@media all and (max-width: 674px) {
   .container_artiste {
     margin-top: 5vh;
   }
 
-  .carte_artiste {
-    margin-bottom: 30px;
-    margin-top: 20px;
-  }
+  /*.carte_artiste{
+      margin-bottom: 30px;
+      margin-top: 20px;
+
+  }*/
+  /*.carte_retour{
+      margin-bottom: 30px;
+      margin-top: 20px;
+  }*/
 }
 .timeline_line {
   width: 100%;
@@ -916,7 +1049,7 @@ h1 {
   border-radius: 20px;
   display: block;
   background-color: #ffffff;
-  margin-left: 250px;
+  margin-left: 100%;
   margin-top: -55px;
 }
 
@@ -999,6 +1132,10 @@ h1 {
   .timeline_pict {
     grid-column: 11;
   }
+
+  .timeline_hour::after {
+    margin-left: 120%;
+  }
 }
 @media all and (max-width: 850px) {
   .timeline_hour {
@@ -1036,6 +1173,7 @@ h1 {
 @media all and (max-width: 500px) {
   .timeline_name {
     font-size: 1.2rem;
+    margin-top: 7px;
   }
 }
 @media all and (max-width: 400px) {
@@ -1052,11 +1190,16 @@ h1 {
   .timeline_name {
     grid-column: 5/span 6;
     font-size: 1rem;
+    margin-top: 0px;
   }
 
   .timeline_pict {
     width: 30px;
     height: 30px;
+  }
+
+  .line {
+    height: 50px;
   }
 }
 .ticket_grid {
@@ -1135,6 +1278,120 @@ h1 {
   background-color: #F0C045;
 }
 
+@media all and (max-width: 1250px) {
+  .Text_choisir_ticket {
+    font-size: 2rem;
+  }
+}
+@media all and (max-width: 1200px) {
+  .Text_choisir_ticket {
+    font-size: 1.5rem;
+    margin-top: 0vh;
+  }
+
+  .ticket_text_bold, .ticket_text {
+    font-size: 1rem;
+  }
+
+  .ticket_text_bold::after {
+    width: 100px;
+    margin-top: -10px;
+    margin-left: 250px;
+  }
+
+  #choisir_Ticket, #choisir_nombre_Ticket {
+    margin-top: 0vh;
+  }
+
+  .ligne_ticket_grid {
+    height: 75px;
+  }
+}
+@media all and (max-width: 1000px) {
+  #payer:hover {
+    background-color: #ffffff;
+  }
+}
+@media all and (max-width: 900px) {
+  #payer {
+    width: 100px;
+    height: 35px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10vh;
+    position: relative;
+    font-size: 1.2rem;
+    font-family: "Signika", sans-serif;
+    font-weight: bold;
+    margin-top: -50px;
+  }
+
+  .Text_choisir_ticket {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: 700px) {
+  .ticket_text_bold::after {
+    width: 75px;
+    margin-top: -10px;
+    margin-left: 200px;
+  }
+
+  .ticket_text {
+    font-size: 0.7rem;
+  }
+}
+@media all and (max-width: 500px) {
+  .ticket_grid {
+    margin-top: 6vh;
+  }
+
+  .ligne_ticket_grid {
+    display: block;
+  }
+
+  .ticket_text_bold, .ticket_text {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .ticket_text_bold::after {
+    margin: 20px auto;
+  }
+
+  .Text_choisir_ticket {
+    text-align: center;
+  }
+
+  #choisir_Ticket, #choisir_nombre_Ticket {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin: 10px 0;
+  }
+
+  #nombreTicket {
+    margin-top: -5vh;
+  }
+
+  #payer {
+    width: 100px;
+    height: 35px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10vh;
+    position: relative;
+    font-size: 1.2rem;
+    font-family: "Signika", sans-serif;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+}
 .ask {
   width: 100%;
   margin-top: 5vh;
@@ -1179,17 +1436,54 @@ h1 {
   background-color: #F0C045;
 }
 
-.container_sponsors {
+@media all and (max-width: 1000px) {
+  .uneQuestionA {
+    margin-top: 10vh;
+  }
+
+  #envoyer:hover {
+    background-color: #ffffff;
+  }
+}
+@media all and (max-width: 700px) {
+  .wrapper_special {
+    width: 75%;
+  }
+
+  #mess {
+    height: 15vh;
+    resize: none;
+  }
+}
+@media all and (max-width: 900px) {
+  #envoyer {
+    width: 100px;
+    height: 35px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10vh;
+    position: relative;
+    font-size: 1.2rem;
+    font-family: "Signika", sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+.container_s {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 10vh;
 }
 
 .logo {
   width: 150px;
   height: 150px;
+  margin: 20px 35px;
   transition: all 0.3s ease-in-out;
   filter: grayscale(1);
   cursor: pointer;
@@ -1200,6 +1494,24 @@ h1 {
   transform: scale(1.075);
 }
 
+@media all and (max-width: 1000px) {
+  .container_s {
+    margin-top: 3vh;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo:hover {
+    transform: none;
+  }
+
+  .logo {
+    filter: grayscale(0);
+  }
+}
 #end_line {
   padding-top: 10vh;
 }
@@ -1262,6 +1574,9 @@ h1 {
 
 .container_miniMenu a {
   color: #ffffff;
+  text-decoration: none;
+  font-family: "Prompt", sans-serif;
+  transition: all 0.5s;
 }
 
 .container_miniMenu span {
@@ -1307,4 +1622,38 @@ h1 {
   text-align: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+@media all and (max-width: 1150px) {
+  .container_footer {
+    flex: none;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .container_resaux {
+    grid-row: 1;
+    margin: 0 auto;
+  }
+
+  .container_miniMenu {
+    grid-row: 2;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .container_logo_footer {
+    grid-row: 3;
+    margin: 0 auto;
+  }
+}
+@media all and (max-width: 1000px) {
+  .container_resaux i:hover {
+    color: #ffffff;
+  }
+
+  .container_miniMenu a:hover {
+    color: #ffffff;
+  }
+}
+
+
