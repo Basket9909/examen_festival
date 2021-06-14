@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="js/decompte.js">
-    <link rel="stylesheet" href="js/burger.js">
-    <link rel="stylesheet" href="js/position_scroll.js">
-    <link rel="stylesheet" href="js/paralax.js">
-    <link rel="stylesheet" href="js/apparition.js">
+    <script src="js/position_scroll.js"></script>
     <link rel="stylesheet" href="build/css/style.css">
     <!--icon Internet Explorer-->
     <link rel="shortcut icon" href="build/images/icons/fusee_icon.svg">
@@ -35,6 +31,18 @@
     <meta property="og:locale"content="fr_FR">
     <meta property="og:site_name"content="Let's Rave Festival">
     <title>Let's Rave Festival</title>
+
+    <script>
+        window.addEventListener('load',()=>{
+            console.log('test')
+            var scrolling
+        document.addEventListener('scroll',(e)=>{
+        console.log('test')
+        scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+        console.log(scrolling)
+    })
+        })
+    </script>
 </head>
 <body>
     <!--Début de la slide 1-->
@@ -54,7 +62,7 @@
                 <li><a href="#Edition_2021"class="lien">Edition 2021</a></li>
                 <li><a href="#lineUp"class="lien">Line-up</a></li>
                 <li><a href="#timetable"class="lien">Timetable</a></li>
-                <li><a href="#ticket"class="lien">Ticket</a></li>
+                <li><a href="#ticket"class="lien">Tickets</a></li>
             </ul>
         </nav>
         <div id="burger">
@@ -68,10 +76,10 @@
                 <a href="#Edition_2021" class="lienMenuBurger">Edition 2021</a>
                 <a href="#lineUp" class="lienMenuBurger">Line-up</a>
                 <a href="#timetable" class="lienMenuBurger">Timetable</a>
-                <a href="#ticket" class="lienMenuBurger">Ticket</a>
+                <a href="#ticket" class="lienMenuBurger">Tickets</a>
             </div>
         </div>
-        <script type="text/javascript" src="js/burger.js"></script>
+      
         <!--Fin de la navigation-->
         <!--titre pricipal-->
         <div id="fond_titre">
@@ -85,7 +93,7 @@
           <rect id="rectangleQuiBouge" x="5" y="5" height="190" width="530"/>
         </svg>
         <!--Date dans le rectangle-->
-      <h2 class="date">09 - 09 - 2021</h2>
+      <h2 class="date">09 <span>-</span>  09 <span>-</span>  2021</h2>
          <!--Gif scroll-->
      <img src="build/images/scroll-down.gif" alt="scroll" id="scroll"> 
     </div>
@@ -115,7 +123,7 @@
                 <div class="carre"><span class="t_second text"></span></div>
             </div>
         </div>
-        <script type="text/javascript" src="js/decompte.js"></script>
+     
         <!--Fin du décompte-->
             <h3 class="texte_slide2 marge"> <b> L’edition 2021</b> se tiendra bien au sportpaleis d’Anvers le <b>09 septembre</b>  avec<b> un maximum de 10.000 festivaliers</b></h3>
             <h3 class="texte_slide2 info">Information pratiques :</h3> 
@@ -123,13 +131,13 @@
             </h3>
             <div class="slide2_enSavoirPlus">Lire plus</div>
             <div class="slide2_enSavoirPlus" id="lireMoins">Lire moins</div>
-        <script type="text/javascript" src="js/apparition.js"></script>
+       
             <h3 class="texte_slide2 info" id="question">Encore une question ?</h3> 
             <div class="slide2_enSavoirPlus" id="bouton_contact"><a class="nousContacter" href="#contact">Nous contacter</a></div>
             <h3 class="revivre edition2020">Revivez l'edition 2020</h3>
             <!--Vidéo-->
-            <iframe class="aftermovie" width="560" height="315" src="https://www.youtube.com/embed/iB9YSyxZmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h3 class="moreInfo">Plus d’infos sur cette édition prochainement...</h3>
+            <!--<iframe class="aftermovie" width="560" height="315" src="https://www.youtube.com/embed/iB9YSyxZmZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="moreInfo">Plus d’infos sur cette édition prochainement...</h3>-->
 
         </div>
         <!--Fin du wrapper-->
@@ -397,7 +405,7 @@
                 </div>
                 </div>
     <!--script au click-->
-<script type="text/javascript" src="js/click_carte_artiste.js"></script>
+
 
             </div>
             </div>
@@ -411,7 +419,7 @@
             <div class="fond_ST"><h2 class="sous_titre">Timetable</h2></div>
             <img src="build/images/fuseeTimetable.svg" alt="fuseeTimetable" class="fuseeLiftOff" id="fuseeLiftOff_gauche" data-movey="-150">
             <img src="build/images/fuseeTimetable.svg" alt="fuseeTimetable"class="fuseeLiftOff" id="fuseeLiftOff_droit" data-movey="-150">
-        <script type="text/javascript" src="js/paralax.js"></script>
+       <!-- <script type="text/javascript" src="js/paralax.js"></script>-->
 
     <!--Mon container-->
             <div class="timeline_line">
@@ -544,11 +552,11 @@
         <!--Sous-titre "sponsors"-->
                 <div class="fond_ST"><h2 class="sous_titre">Sponsors</h2></div>
                 <div class="container_s">
-                    <img src="build/images/sponsors/coca300.png" alt="rouge" class="logo">
-                    <img src="build/images/sponsors/aoc300.png" alt="vert" class="logo">
-                    <img src="build/images/sponsors/q_dance300.png" alt="orange" class="logo">
-                    <img src="build/images/sponsors/redbull300.png" alt="bleu" class="logo">
-                    <img src="build/images/sponsors/jbl300.png" alt="jaune" class="logo">
+                    <img src="build/images/couleur/rouge300.png" alt="rouge" class="logo">
+                    <img src="build/images/couleur/vert300.png" alt="vert" class="logo">
+                    <img src="build/images/couleur/orange300.png" alt="orange" class="logo">
+                    <img src="build/images/couleur/bleu300.png" alt="bleu" class="logo">
+                    <img src="build/images/couleur/jaune300.png" alt="jaune" class="logo">
                 </div>
             </div>
     </div>
@@ -581,7 +589,12 @@
                         </div>
                     </div>
                     <div id="copy">&copy; Let's rave festival</div>
-                    <script src="js/position_scroll.js"></script>
+<!--Scripts-->
+<script type="text/javascript" src="js/click_carte_artiste.js"></script>
+<script type="text/javascript" src="js/burger.js"></script>
+<script type="text/javascript" src="js/apparition.js"></script>
+<script type="text/javascript" src="js/decompte.js"></script>
+
                 </body>
 
                <!-- <script type="text/javascript">

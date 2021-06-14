@@ -1,6 +1,6 @@
 
 const fusees = document.querySelectorAll('.fuseeLiftOff')
-console.log(document)
+//console.log(document)
 document.addEventListener('scroll',()=>{
     const force = 1
 //console.log(container)
