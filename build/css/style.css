@@ -61,6 +61,7 @@ html, body {
   cursor: pointer;
   z-index: 10000;
   transition: all 1s;
+  display: none;
 }
 
 #image_ticket:hover {
@@ -396,12 +397,12 @@ h1 {
     margin-right: 10px;
   }
 
-  #arrow {
+  #image_ticket {
     display: none;
   }
 
-  #image_ticket {
-    display: none;
+  #arrow {
+    pointer-events: none;
   }
 }
 @media all and (max-width: 900px) {
@@ -456,6 +457,10 @@ h1 {
 @media all and (max-width: 650px) {
   .wrapper {
     width: 90%;
+  }
+
+  #arrow {
+    left: 80%;
   }
 }
 @media all and (max-width: 500px) {
@@ -1128,9 +1133,15 @@ h1 {
   background-image: url(../../build//images/petite_images/sefa.png);
 }
 
+.container_fus {
+  height: 50vh;
+  width: 100%;
+  position: absolute;
+  margin-top: 20vh;
+}
+
 .fuseeLiftOff {
   position: absolute;
-  margin-top: 50vh;
 }
 
 #fuseeLiftOff_gauche {

@@ -1,38 +1,49 @@
 
-const fusees = document.querySelectorAll('.fuseeLiftOff')
-//console.log(document)
-document.addEventListener('scroll',()=>{
-    const force = 1
-//console.log(container)
-const winH = window.innerHeight
-//console.log(winH)
-const posH = container.offsetTop
-//console.log(posH)
-const containerH = container.offsetHeight
-//console.log(containerH)
-const scroll = window.scrollY
-console.log(scroll)
+    window.addEventListener('load',()=>{
+        
+        document.body.addEventListener('scroll',()=>{
+        //console.log(fusees)
+        const container = document.querySelector('.container_fus')
+        const fusees = container.querySelectorAll('.fuseeLiftOff')
 
-const min = scroll+winH-posH
-const max = containerH+winH
-let move = min/max
-//console.log(move)
+        var scrolling = document.documentElement.scrollTop || window.scrollY || window.pageYOffset || document.body.scrollTop
+        //console.log(scrolling)
+            const force = 1
+        //console.log(container)
+        const winH = window.innerHeight
+        //console.log(winH)
+        const posH = container.offsetTop
+        //console.log(posH)
+        const containerH = container.offsetHeight
+        //console.log(containerH)
+        const scroll = scrolling
+        //console.log(scroll)
 
-move = Math.max(0,move)
-move = Math.min(1,move)
+        const min = scroll+winH-posH
+        
+        const max = containerH+winH
+        //console.log(max)
+        let move = min/max
+      // console.log(move)
 
-move = (move*2-1)
+        move = Math.max(0,move)
+    //console.log(move)
+        move = move/7
+    //console.log(move)
+		move = Math.min(1,move)
+    //console.log(move)
 
-move = move*force
 
-const deltaX = container.getAttribute('data-movex')
-const deltaY = container.getAttribute('data-movey')
-//console.log(deltaY)
-container.style.transform = `translate(${deltaX*move}%,${deltaY*move}%)`
+       move = (move*2-1)
+        //console.log(move)
 
-fusees.forEach(fusee =>{
-const deltaXFus = fusee.getAttribute('data-movex')
-const deltaYFus = fusee.getAttribute('data-movey')
-fusee.style.transform = `translate(${deltaXSat*move}%,${deltaYSat*move}%)`
+        move = move*force
+        //console.log(move)
+
+        fusees.forEach(fus =>{
+            //console.log(move)
+		const deltaYfus = fus.getAttribute('data-movey')
+        fus.style.transform = `translateY(${deltaYfus*move}%)`
+        })
+    })
 })
-}) 
