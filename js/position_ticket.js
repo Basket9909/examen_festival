@@ -26,7 +26,7 @@ scrolling = document.documentElement.scrollTop || window.scrollY || window.pageY
 //console.log(scrolling)
 const slide = window.innerHeight
 const width = window.innerWidth
-if(width > 1000){
+if(width > 700){
     if(scrolling > slide){
 
             ticket.style.display = `block`

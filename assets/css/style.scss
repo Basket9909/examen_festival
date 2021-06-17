@@ -18,16 +18,19 @@ $font_secondaire : 'Signika', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
 @mixin centerGD {
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
 @mixin centerHB {
     position: absolute;
     top: 50%;
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 @mixin slideTaille {
@@ -53,6 +56,8 @@ $font_secondaire : 'Signika', sans-serif;
     font-size: 1.5rem;
     font-family: $font_secondaire;
     font-weight: bold;
+    @include transition(all .5s ease-in-out);
+    text-align: center;
 }
 @mixin butonReduit {
     width: 100px;
@@ -66,6 +71,21 @@ $font_secondaire : 'Signika', sans-serif;
     font-size: 1.2rem;
     font-family: $font_secondaire;
     font-weight: bold;
+    text-align: center;
+}
+@mixin transition($property){
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    -o-transition: $property;
+    -ms-transition: $property;
+    transition: $property; 
+}
+@mixin transform($property){
+    -webkit-transform: $property; 
+    -moz-transform: $property;
+    -o-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
 }
 //page a 0
 *{
@@ -108,15 +128,16 @@ html, body{
    z-index: 100;
 }
 #arrow{
+    display: none;
     position: fixed;
     color: $white;
     opacity: 0.5;
     width: 50px;
     left: 90%;
-    top: 90%;
+    top: 85%;
     cursor: pointer;
     z-index: 10000;
-    transition: all 1s;
+    @include transition(all 1s ease-in-out);
 }
 #image_ticket{
     opacity: 0.5;
@@ -126,7 +147,7 @@ html, body{
     top: 10%;
     cursor: pointer;
     z-index: 10000;
-    transition: all 1s;
+    @include transition(all 1s ease-in-out);
     display: none;
 }
 #image_ticket:hover{
@@ -163,7 +184,7 @@ nav ul li a {
     font-family: $font_principale;
     font-weight:bold;
     font-size: 1.2rem;
-    transition: 0.5s ease;
+    @include transition(all .5s ease);
     
 }
 //souligner les titre des lien avec le hover
@@ -175,7 +196,7 @@ nav ul li a {
     height: 3px;
     width: 0;
     background-color: $black;
-    transition: width 0.5s ease;
+    @include transition(all .5s ease);
   }
   .lien:hover::after {
     width: 100%; 
@@ -220,7 +241,7 @@ ul img{
     border-radius: 20px;
     background-color: $black;
     margin: 5px 0;
-    transition:  all 1s ease-in-out;
+    @include transition(all 1s ease-in-out);
 }
 
 
@@ -271,34 +292,28 @@ h1{
     height: 50%;
     position: absolute;
     stroke: $gold;
-    -webkit-stroke-width: 5px;
     stroke-width: 5px;
     fill: none;
-    -webkit-stroke-dasharray: 315;
     stroke-dasharray: 315;
     /*animation-name: yes;
     animation-duration: 10s;
     animation-timing-function:linear;
     animation-iteration-count: infinite;*/
+    -webkit-animation: yes 10s linear infinite;
     -moz-animation: yes 10s linear infinite;
     -o-animation: yes 10s linear infinite;
     -ms-animation: yes 10s linear infinite;
-    -webkit-animation: yes 10s linear infinite;
     animation: yes 10s linear infinite;
 }
-
 @keyframes yes {
     0%{
-        -webkit-stroke-dashoffset: 315;
-        stroke-dashoffset: 315;
+        stroke-dashoffset: 945;
     }
     50%{
-        -webkit-stroke-dashoffset: 0;
-        stroke-dashoffset: 0;
+        stroke-dashoffset: 630;
     }
     100%{
-        -webkit-stroke-dashoffset: -315;
-        stroke-dashoffset: -315;
+        stroke-dashoffset: 315;
     }  
 }
 .date{
@@ -327,29 +342,31 @@ h1{
     width: 100%;
     height: 100%;
     z-index: 10000;
-    transition: transform 1s ease-in-out;
-    transform: translate(100%,0);
+    @include transition(all 1s ease-in-out);
+    @include transform(translate(100%,0));
 }
 .open{
-    transition: transform 1s ease-in-out;
-    transform: translate(0%,0%);
+    @include transition(all 1s ease-in-out);
+    @include transform(translate(0%,0%));
     position: fixed;
 }
 #burger .haut{
-    transition: all 1s ease-in-out;
-    transform: rotate(-45deg) translate(-13px);
+    @include transition(all 1s ease-in-out);
+    @include transform(rotate(-45deg) translate(-13px));
+    -webkit-transform-origin: center;
     transform-origin: center;
     background-color: $gold;
 }
 #burger .bas{
-    transition:  all 1s ease-in-out;
-    transform: rotate(45deg) translate(-13px);
+    @include transition(all 1s ease-in-out);
+    @include transform(rotate(45deg) translate(-13px));
+    -webkit-transform-origin: center;
     transform-origin: center;
     background-color: $gold;
 }
 #burger .milieu{
-    transition:  all 1s ease-in-out;
-    transform: scale(0);
+    @include transition(all 1s ease-in-out);
+    @include transform(scale(0));
     display: hidden;
 }
 .containerMenuBurger{
@@ -409,10 +426,10 @@ h1{
         left: 12%;
     } 
 }
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     ul img{
-        display: none;
-    } 
+        left: 16%;
+    }
     nav ul li{
         display: none
     }
@@ -429,14 +446,29 @@ h1{
     #burger{
         margin-right: 10px;
     }
-    #image_ticket{
-        display: none;
+    
+    #arrow:hover{
+        opacity: 0.5;
     }
-    #arrow{
-        pointer-events: none;
+    #image_ticket{
+        opacity: 1; 
+    }
+    #image_ticket:hover{
+        opacity: 1; 
+    }
+    @keyframes fusee{
+        0%{
+            margin-left: -50%;
+        }
+        100%{
+            margin-left: 11%;
+        }
     }
 }
 @media all and (max-width: 900px){
+    ul img{
+        left: 19%;
+    }
     h1{
         font-size: 4rem;
     }
@@ -450,7 +482,16 @@ h1{
     }
     
 }
+@media all and (max-width: 800px){
+    ul img{
+        left: 22%;
+    }
+}
+
 @media all and (max-width: 700px){
+    ul img{
+        display: none;
+    } 
     h1{
         font-size: 3rem;
     }
@@ -472,6 +513,7 @@ h1{
     #burger{
         margin-left: 80%;
     }
+    
 }
 @media all and (max-width: 650px){
     .wrapper{
@@ -480,6 +522,7 @@ h1{
     #arrow{
         left: 80%;
     }
+    
 }
 @media all and (max-width: 500px){
     #home svg{
@@ -585,7 +628,6 @@ h1{
     border: solid 2px $white;
     color: $white;
     line-height: 200%;
-    transition: all 0.5s ease-in-out;
 }
 .slide2_enSavoirPlus:hover{
     border: solid 2px $gold;
@@ -607,7 +649,7 @@ h1{
     font-weight: bold;
     font-size: 1.5rem;
     display: block;
-    transition: all 0.5s ease-in-out;
+    @include transition(all .5s ease-in-out);
 }
 .nousContacter:hover{
     color: $gold;
@@ -626,22 +668,34 @@ h1{
     position: relative;
     margin-top: 3vh;
 }
+.grid_videomore{
+    display: grid;
+    grid-template-rows: 400px 50px;
+}
 .moreInfo{
+    grid-row: 2;
     font-family: $font_principale;
     font-size: 2rem;
     font-weight: normal;
     width: 100%;
     text-align: center;
     color: $white;
-    margin-top: 400px;
+    margin-top: 1vh;  
 }
 .aftermovie{
+    grid-row: 1;
     width: 560px;
     height: 320px;
-    @include centerGD();
-    margin-top: 16vh;
+    @include centerGD();  
+    margin-top: 5vh;  
 }
 // debut responsive slide 2
+
+@media all and (min-width: 2000px){
+    .grid_videomore{
+        grid-template-rows: 450px 50px;
+    }
+}
 @media all and (max-width: 1250px){
   .sous_titre{
      font-size: 2rem; 
@@ -653,14 +707,10 @@ h1{
         font-size: 1.5rem;
     }
 }
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     .aftermovie{
         width: 420px;
         height: 240px;
-        margin-top: 16vh;
-    }
-    .moreInfo{
-        margin-top: 300px;
     }
     .nousContacter:hover{
         color: $white;
@@ -668,6 +718,9 @@ h1{
     .slide2_enSavoirPlus:hover{
         border: solid 2px $white;
         color: $white;
+    }
+    .grid_videomore{
+        grid-template-rows: 300px 50px;
     }
 }
 @media all and (max-width: 900px){
@@ -767,17 +820,13 @@ h1{
         .aftermovie{
             width: 280px;
             height: 160px;
-            margin-top: 12vh;
         }
         .moreInfo{
             font-size: 0.7rem;
-            margin-top: 200px;
-        }   
-}
-@media all and (min-height: 850px){
-        .moreInfo{
-            margin-top: 350px;
-        }   
+        } 
+        .grid_videomore{
+            grid-template-rows: 200px 20px;
+        }  
 }
 // fin responsive slide 2
 //slide 2 FIN 
@@ -797,7 +846,6 @@ h1{
 #touch{
     position: relative;
     margin-top: -5em;
-    z-index: 100;
     top: -200px;
     left: 0;
 }
@@ -811,7 +859,7 @@ h1{
     overflow:hidden;
     margin-bottom: 50px;
     margin-top: 70px;
-    -webkit-backface-visibility:hidden;
+    -webkit-backface-visibility: hidden;
     backface-visibility:hidden;
     margin: 70px 5px 50px 5px 
     
@@ -820,11 +868,7 @@ h1{
 .carte_artiste:hover{
     cursor: pointer;
     .img_carte{
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2); 
+        @include transform( scale(1.2));
     } 
 }
 //permet a la photo de ne pas depasser
@@ -838,12 +882,8 @@ h1{
 .img_carte{
     height: 100%;
     width: 100%;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
+    @include transform( scale(1));
+    @include transition(all 0.3s ease-in-out);
     border-radius: 20px 20px 0 0;
 }
 .rect_texte{
@@ -870,11 +910,7 @@ h1{
     border-radius: 20px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+    @include transform(rotateY(180deg));
     cursor: pointer;
 }
 .wrapper_carte{
@@ -907,11 +943,7 @@ h1{
     line-height: 1.7em;
 }
 .flip{
-    -webkit-transition: transform 1s;
-    -moz-transition: transform 1s;
-    -o-transition: transform 1s;
-    -ms-transition: transform 1s;
-    transition: transform 1s;
+    @include transition(transform 1s);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d; 
@@ -920,11 +952,7 @@ h1{
 }
 //s'active au click et permet de tourner la certe 
 .flip.flipMe{
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+    @include transform(rotateY(180deg));
 }
 //souligner les titre et sous-titres
 .titre_carte_retour::after,.sous_titre_carte_retour::after{
@@ -952,12 +980,11 @@ h1{
         margin-left: 20px;
     }
 }
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     .carte_artiste:hover{
         cursor: pointer;
         .img_carte{
-            -webkit-transform: none; 
-            transform: none; 
+            @include transform(none);
         }   
     }
     .carte_artiste{
@@ -1011,8 +1038,7 @@ h1{
     border-radius: 90%;
     background-position: center center;
     background-size: cover;
-    border: solid 1px $white;
-    
+    border: solid 1px $white;  
 }
 //je fais la separtion en "after"
 .timeline_hour::after{
@@ -1060,7 +1086,7 @@ h1{
     height: 50vh;
     width: 100%;
     position: absolute;
-    margin-top: 20vh
+    margin-top: 20vh;
 }
 .fuseeLiftOff{
     position: absolute;
@@ -1082,7 +1108,10 @@ h1{
         font-size: 1.7rem;
     }
 }
-@media all and (max-width: 1000px){
+.container_fus{
+    margin-top: 30vh;
+}
+@media all and (max-width: 1024px){
     #fuseeLiftOff_droit, #fuseeLiftOff_gauche{
         display: none;
     }
@@ -1241,7 +1270,7 @@ h1{
         height: 75px;
     }
 }
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     #payer:hover{
         background-color: $white;
     } 
@@ -1330,13 +1359,13 @@ h1{
 #envoyer{
     @include centerGD();
     @include buton();
-    
+    width: 170px;
 }
 #envoyer:hover{
   background-color: $gold;
 }
 //debut responsive slide 6
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     .uneQuestionA{
         margin-top: 10vh;
     }
@@ -1356,7 +1385,7 @@ h1{
 @media all and (max-width: 900px){
     #envoyer{
         @include butonReduit();
-        text-align: center;
+        width: 120px;
     }
 }
 //Fin responsive slide 6
@@ -1374,16 +1403,16 @@ h1{
     width: 150px;
     height: 150px;
     margin: 20px 35px;
-    transition: all 0.3s ease-in-out;
+    @include transition(all 0.3s ease-in-out);
     filter: grayscale(1);
     cursor: pointer;
 }
 .logo:hover{
     filter: grayscale(0);
-    transform: scale(1.075);
+    @include transform(scale(1.075));
 }
 //debut responsive slide 7
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     .container_s{
         margin-top: 3vh;
     }
@@ -1392,7 +1421,7 @@ h1{
         height: 100px;
     }
     .logo:hover{
-        transform: none;
+        @include transform(none);
     }
     .logo{
         filter: grayscale(0);
@@ -1428,7 +1457,7 @@ h1{
     font-size: 2rem;
     color: $white;
     margin : 3vh 1vh 0vh 1vh;
-    transition: all 0.5s;
+    @include transition(all 0.5s);
     cursor: pointer;
 }
 .container_resaux i:hover{
@@ -1451,7 +1480,7 @@ h1{
     color: $white;
     text-decoration: none;
     font-family: $font_principale;
-    transition: all 0.5s;
+    @include transition(all 0.5s);
 }
 .container_miniMenu span{
     font-family: $font_principale;
@@ -1475,7 +1504,7 @@ h1{
     @include centerHB();
 }
 #footer_fusee{ 
-    margin-left: 150px; 
+    margin-left: 155px; 
     @include centerHB();
     position: relative;
 
@@ -1493,9 +1522,10 @@ h1{
     .container_footer{
         flex: none;
         display: grid;
-        grid-template-rows: repeat(3,15vh);
+        grid-template-rows: repeat(3,100px);
         grid-template-columns: repeat(1,1fr);
     }
+    
     .container_resaux{
         grid-row: 1;
         margin: 0 auto;
@@ -1510,7 +1540,7 @@ h1{
         margin: 0 auto;
     }
 }
-@media all and (max-width: 1000px){
+@media all and (max-width: 1024px){
     .container_resaux i:hover{
         color: $white;
     }
@@ -1518,9 +1548,5 @@ h1{
         color: $white;
     }
 }
-@media all and (max-width: 500px){
-    .container_footer{
-        grid-template-rows: repeat(3,20vh);
-    }
-}
+
 //fin responsive slide 8
